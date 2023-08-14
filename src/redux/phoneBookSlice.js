@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { fetchContacts } from 'servises/fetchContactsApi';
 import { addNewContactsToDB } from 'servises/addContactsApi';
 import { deleteContactUser } from '../servises/deleteContactApi';
+
 import { messageObj } from '../helpers/settings';
 
 const contactsState = {
