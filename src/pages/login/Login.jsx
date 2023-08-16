@@ -1,8 +1,13 @@
 import { useDispatch } from 'react-redux';
-import { userLogin } from 'servises/userLoginApi';
+// import { Navigate } from 'react-router-dom';
+import { userLogin } from '../../servises/userAuth/userLoginApi';
+// import { selectLoggedIn } from '../../redux/selectors';
 
 const Login = () => {
   const dispatch = useDispatch();
+  // const isLoggedin = useSelector(selectLoggedIn);
+
+  // if (isLoggedin) return <Navigate to={'/contacts'} />;
 
   const onSubmitLogin = e => {
     e.preventDefault();

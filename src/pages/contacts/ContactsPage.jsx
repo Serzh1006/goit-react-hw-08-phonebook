@@ -1,23 +1,25 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import Contacts from '../../components/contacts/Contacts';
 import Filter from '../../components/filter/Filter';
 import Loader from '../../components/loader/Loader';
 import PhoneBook from '../../components/phonebook/Phonebook';
-import { selectContacts, selectLoading } from 'redux/selectors';
-import { fetchContacts } from '../../servises/fetchContactsApi';
+import { selectContacts, selectLoading, selectLoggedIn } from 'redux/selectors';
+import { fetchContacts } from '../../servises/contactsApi/fetchContactsApi';
 import css from '../../components/app.module.css';
 
 const ContactsPage = () => {
   const isLoading = useSelector(selectLoading);
   const contactsFromState = useSelector(selectContacts);
-
+  const isLoggedin = useSelector(selectLoggedIn);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (!isLoggedin) return <Navigate to={'/login'} />;
     dispatch(fetchContacts());
-  }, [dispatch]);
+  }, [dispatch, isLoggedin]);
 
   return (
     <div>

@@ -13,7 +13,7 @@ const Contacts = () => {
           <ContactsItem
             key={contact.id}
             id={contact.id}
-            nameUser={contact.nameUser}
+            name={contact.name}
             number={contact.number}
           />
         );

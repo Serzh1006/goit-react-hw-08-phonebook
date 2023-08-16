@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import { addNewContactsToDB } from 'servises/addContactsApi';
+import { addNewContactsToDB } from 'servises/contactsApi/addContactsApi';
 import { selectContacts } from 'redux/selectors';
 import { messageObj } from '../../helpers/settings';
 import css from './phonebook.module.css';
 
 const PhoneBook = () => {
-  const [nameUser, setNameUser] = useState('');
+  const [name, setNameUser] = useState('');
   const [number, setNumber] = useState('');
 
   const dataContacts = useSelector(selectContacts);
@@ -32,16 +32,14 @@ const PhoneBook = () => {
 
   const onSubmitForm = e => {
     e.preventDefault();
-    const findName = dataContacts.find(
-      contact => contact.nameUser === nameUser
-    );
+    const findName = dataContacts.find(contact => contact.nameUser === name);
     if (findName !== undefined) {
       toast.error(`${findName.nameUser} is already in contacts`, messageObj);
       setNameUser('');
       setNumber('');
       return;
     } else {
-      dispatch(addNewContactsToDB({ nameUser, number }));
+      dispatch(addNewContactsToDB({ name, number }));
     }
     setNameUser('');
     setNumber('');
@@ -56,7 +54,7 @@ const PhoneBook = () => {
           type="text"
           name="name"
           autoComplete="off"
-          value={nameUser}
+          value={name}
           autoFocus="on"
           pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
