@@ -7,18 +7,18 @@
 }
 
 .contactsItem {
-  font-family: 'Times New Roman', Times, serif;
-  color: rgb(24, 24, 88);
-  font-size: 17px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 17px;
   margin-bottom: 5px;
   height: 30px;
   padding: 3px;
   border: 2px solid burlywood;
   border-radius: 5px;
   background-color: rgba(207, 164, 108, 0.4);
+  color: rgb(24, 24, 88);
 }
 
 .btnDelete {
@@ -36,4 +36,9 @@
 .btnDelete:focus {
   background-color: rgb(116, 12, 12);
   cursor: pointer;
+}
+
+.numberContact {
+  margin-left: auto;
+  margin-right: 9px;
 }

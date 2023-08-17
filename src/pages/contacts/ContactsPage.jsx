@@ -22,7 +22,7 @@ const ContactsPage = () => {
   }, [dispatch, isLoggedin]);
 
   return (
-    <div>
+    <div className={css.contactsPage}>
       <h2 className={css.phoneBook}>Phonebook</h2>
       <PhoneBook />
       <h2 className={css.contacts}>Contacts</h2>
