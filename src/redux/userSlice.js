@@ -12,6 +12,7 @@ const stateUsers = {
   isLoggedIn: false,
   error: null,
   loading: false,
+  isRefresh: false,
 };
 
 const userSlice = createSlice({
@@ -24,10 +25,10 @@ const userSlice = createSlice({
         state.error = null;
       })
       .addCase(userSignUp.fulfilled, (state, action) => {
+        state.loading = false;
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
-        state.loading = false;
       })
       .addCase(userSignUp.rejected, (state, action) => {
         state.loading = false;
@@ -38,10 +39,10 @@ const userSlice = createSlice({
         state.error = null;
       })
       .addCase(userLogin.fulfilled, (state, action) => {
+        state.loading = false;
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
-        state.loading = false;
       })
       .addCase(userLogin.rejected, (state, action) => {
         state.loading = false;
@@ -52,25 +53,28 @@ const userSlice = createSlice({
         state.error = null;
       })
       .addCase(userLogOut.fulfilled, state => {
+        state.loading = false;
         state.user = null;
         state.token = null;
         state.isLoggedIn = false;
-        state.loading = false;
       })
       .addCase(userLogOut.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       })
       .addCase(userRefresh.pending, state => {
+        state.isRefresh = true;
         state.loading = true;
         state.error = null;
       })
       .addCase(userRefresh.fulfilled, (state, action) => {
+        state.isRefresh = false;
+        state.loading = false;
         state.user = action.payload;
         state.isLoggedIn = true;
-        state.loading = false;
       })
       .addCase(userRefresh.rejected, (state, action) => {
+        state.isRefresh = false;
         state.loading = false;
         state.error = action.payload;
       });

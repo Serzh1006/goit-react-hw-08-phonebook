@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { addNewContactsToDB } from 'servises/contactsApi/addContactsApi';
 import { selectContacts } from 'redux/selectors';
 import { messageObj } from '../../helpers/settings';
@@ -32,9 +32,9 @@ const PhoneBook = () => {
 
   const onSubmitForm = e => {
     e.preventDefault();
-    const findName = dataContacts.find(contact => contact.nameUser === name);
+    const findName = dataContacts.find(contact => contact.name === name);
     if (findName !== undefined) {
-      toast.error(`${findName.nameUser} is already in contacts`, messageObj);
+      toast.error(`${findName.name} is already in contacts`, messageObj);
       setNameUser('');
       setNumber('');
       return;

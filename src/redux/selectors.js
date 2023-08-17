@@ -6,6 +6,7 @@ export const selectLoading = state => state.contacts.contacts.isLoading;
 export const selectError = state => state.contacts.contacts.error;
 export const selectUser = state => state.user.user;
 export const selectLoggedIn = state => state.user.isLoggedIn;
+export const selectIsRefresh = state => state.user.isRefresh;
 
 export const visibleContacts = createSelector(
   [selectContacts, selectFilter],

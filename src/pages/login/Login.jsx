@@ -1,13 +1,8 @@
 import { useDispatch } from 'react-redux';
-// import { Navigate } from 'react-router-dom';
 import { userLogin } from '../../servises/userAuth/userLoginApi';
-// import { selectLoggedIn } from '../../redux/selectors';
 
 const Login = () => {
   const dispatch = useDispatch();
-  // const isLoggedin = useSelector(selectLoggedIn);
-
-  // if (isLoggedin) return <Navigate to={'/contacts'} />;
 
   const onSubmitLogin = e => {
     e.preventDefault();
@@ -25,13 +20,13 @@ const Login = () => {
           name="email"
           type="email"
           autoComplete="off"
-          placeholder="Enter email"
+          placeholder="Email"
         />
         <input
           name="password"
           type="password"
           autoComplete="off"
-          placeholder="Enter password"
+          placeholder="Password"
         />
         <button type="submit">Login</button>
       </form>
