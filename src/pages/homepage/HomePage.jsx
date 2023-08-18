@@ -1,5 +1,7 @@
+import css from './titleHome.module.css';
+
 const HomePage = () => {
-  return <h1>Welcome to our PhoneBook 😏</h1>;
+  return <h1 className={css.title}>My PhoneBook</h1>;
 };
 
 export default HomePage;

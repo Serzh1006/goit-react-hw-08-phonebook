@@ -1,4 +1,6 @@
-.navigation {
-  display: flex;
-  gap: 11px;
+.homeLink:hover,
+.homeLink:focus,
+.contactsLink:hover,
+.contactsLink:focus {
+  text-decoration: underline;
 }

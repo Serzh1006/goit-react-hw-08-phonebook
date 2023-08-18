@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { CloseIcon } from '@chakra-ui/icons';
 import { deleteContactUser } from '../../servises/contactsApi/deleteContactApi';
 import css from './contacts.module.css';
 
@@ -14,7 +15,7 @@ const ContactsItem = ({ id, name, number }) => {
         onClick={() => dispatch(deleteContactUser(id))}
         type="button"
       >
-        Delete
+        <CloseIcon boxSize={3} />
       </button>
     </li>
   );

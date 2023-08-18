@@ -1,4 +1,12 @@
-/* .authNav {
+.authNav {
   display: flex;
   gap: 5px;
-} */
+  margin-left: auto;
+}
+
+.login:hover,
+.login:focus,
+.register:hover,
+.register:focus {
+  text-decoration: underline;
+}

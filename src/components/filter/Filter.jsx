@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { Input } from '@chakra-ui/react';
 import { selectFilter } from 'redux/selectors';
 import { filterByName } from 'redux/filterSlice';
 import css from './filter.module.css';
@@ -9,7 +10,8 @@ const Filter = () => {
   return (
     <label className={css.filterLabel}>
       Find contacts by Name
-      <input
+      <Input
+        placeholder="Enter name"
         className={css.filterInput}
         type="text"
         name="filter"

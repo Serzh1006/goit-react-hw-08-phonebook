@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Input } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import * as yup from 'yup';
 import { addNewContactsToDB } from 'servises/contactsApi/addContactsApi';
 import { selectContacts } from 'redux/selectors';
@@ -43,13 +45,14 @@ const PhoneBook = () => {
         <label className={css.label}>
           Name
           <Field
+            as={Input}
             className={css.input}
             type="text"
             name="name"
             autoComplete="off"
-            autoFocus="on"
           />
         </label>
+
         <ErrorMessage
           className={css.nameErrorMessage}
           component="div"
@@ -59,6 +62,7 @@ const PhoneBook = () => {
         <label className={css.label}>
           Number
           <Field
+            as={Input}
             className={css.input}
             type="tel"
             name="number"
@@ -71,9 +75,9 @@ const PhoneBook = () => {
           name="number"
         />
 
-        <button className={css.btnSubmit} type="submit">
+        <Button className={css.btnSubmit} type="submit" colorScheme="blue">
           Add Contact
-        </button>
+        </Button>
       </Form>
     </Formik>
   );
