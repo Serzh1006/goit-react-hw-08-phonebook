@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as yup from 'yup';
 import { Input } from '@chakra-ui/react';
 import { Button } from '@chakra-ui/react';
-import * as yup from 'yup';
 import { addNewContactsToDB } from 'servises/contactsApi/addContactsApi';
 import { selectContacts } from 'redux/selectors';
 import { messageObj } from '../../helpers/settings';

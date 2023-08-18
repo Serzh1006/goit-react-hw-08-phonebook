@@ -1,35 +1,69 @@
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as yup from 'yup';
+import { Input } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { userLogin } from '../../servises/userAuth/userLoginApi';
+import css from './login.module.css';
 
 const Login = () => {
   const dispatch = useDispatch();
 
-  const onSubmitLogin = e => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const dataFormLogin = Object.fromEntries(formData);
-    dispatch(userLogin(dataFormLogin));
-    e.currentTarget.reset();
+  const initialsValues = {
+    email: '',
+    password: '',
+  };
+
+  const schema = yup.object().shape({
+    email: yup.string().required(),
+    password: yup.string().min(7).required(),
+  });
+
+  const onSubmitLogin = (values, { resetForm }) => {
+    dispatch(userLogin(values));
+    resetForm();
   };
 
   return (
     <>
-      <h2>Login Page</h2>
-      <form onSubmit={onSubmitLogin}>
-        <input
-          name="email"
-          type="email"
-          autoComplete="off"
-          placeholder="Email"
-        />
-        <input
-          name="password"
-          type="password"
-          autoComplete="off"
-          placeholder="Password"
-        />
-        <button type="submit">Login</button>
-      </form>
+      <h2 className={css.loginTitle}>Login</h2>
+      <Formik
+        initialValues={initialsValues}
+        validationSchema={schema}
+        onSubmit={onSubmitLogin}
+      >
+        <Form className={css.formLogin}>
+          <Field
+            className={css.inputLogin}
+            as={Input}
+            name="email"
+            type="email"
+            autoComplete="off"
+            placeholder="Email"
+          />
+          <ErrorMessage
+            className={css.loginError}
+            component="div"
+            name="email"
+          />
+          <Field
+            className={css.inputLogin}
+            as={Input}
+            name="password"
+            type="password"
+            autoComplete="off"
+            placeholder="Password"
+          />
+          <ErrorMessage
+            className={css.passwordError}
+            component="div"
+            name="password"
+          />
+          <Button className={css.btnLogin} type="submit" colorScheme="teal">
+            Log in
+          </Button>
+        </Form>
+      </Formik>
     </>
   );
 };

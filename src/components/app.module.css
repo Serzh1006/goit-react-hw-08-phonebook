@@ -2,19 +2,12 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 23px;
   margin-bottom: 20px;
-  margin-left: 10px;
   color: rgb(0, 110, 255);
 }
 
 .contacts {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 23px;
-  margin-left: 10px;
   margin-bottom: 20px;
   color: rgb(0, 110, 255);
-}
-
-.contactsPage {
-  margin-left: 20px;
-  margin-top: 20px;
 }

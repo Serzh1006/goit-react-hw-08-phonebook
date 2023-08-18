@@ -2,13 +2,11 @@
   font-family: 'Times New Roman', Times, serif;
   font-weight: 600;
   font-size: 20px;
-  margin-left: 15px;
   color: rgb(7, 6, 65);
 }
 
 .filterInput {
   display: block;
-  margin-left: 15px;
   margin-top: 5px;
   width: 250px;
   outline: none;

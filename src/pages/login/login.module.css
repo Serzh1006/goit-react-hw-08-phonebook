@@ -1,0 +1,55 @@
+.formLogin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border: 1px solid rgb(194, 190, 190);
+  border-radius: 5px;
+  width: 365px;
+  padding: 10px;
+  padding-top: 15px;
+  height: 225px;
+  margin: 0 auto;
+}
+
+.loginTitle {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.btnLogin {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+}
+
+.inputLogin {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.loginError {
+  position: absolute;
+  top: 53px;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 15px;
+  pointer-events: none;
+  text-align: center;
+  color: red;
+}
+
+.passwordError {
+  position: absolute;
+  top: 125px;
+  right: 50%;
+  transform: translateX(50%);
+  pointer-events: none;
+  font-size: 15px;
+  text-align: center;
+  color: red;
+}
