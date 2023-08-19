@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { fetchContacts } from 'servises/contactsApi/fetchContactsApi';
 import { addNewContactsToDB } from 'servises/contactsApi/addContactsApi';
 import { deleteContactUser } from '../servises/contactsApi/deleteContactApi';
+import { updateContactUser } from 'servises/contactsApi/updateContactsApi';
 import { messageObj } from '../helpers/settings';
 
 const contactsState = {
@@ -38,7 +39,7 @@ const phoneBookSlice = createSlice({
       .addCase(addNewContactsToDB.fulfilled, (state, action) => {
         state.contacts.isLoading = false;
         state.contacts.items.push(action.payload);
-        toast.success('Контакт был успешно добавлен', messageObj);
+        toast.success('The contact has been added successfully', messageObj);
       })
       .addCase(addNewContactsToDB.rejected, (state, action) => {
         state.contacts.isLoading = false;
@@ -55,9 +56,26 @@ const phoneBookSlice = createSlice({
           contact => contact.id === action.payload.id
         );
         state.contacts.items.splice(indexElem, 1);
-        toast.success('Контакт был успешно удален', messageObj);
+        toast.success('The contact has been deleted', messageObj);
       })
       .addCase(deleteContactUser.rejected, (state, action) => {
+        state.contacts.isLoading = false;
+        state.contacts.error = action.payload;
+        toast.error(`${action.payload}`, messageObj);
+      })
+      .addCase(updateContactUser.pending, state => {
+        state.contacts.isLoading = true;
+        state.contacts.error = null;
+      })
+      .addCase(updateContactUser.fulfilled, (state, action) => {
+        state.contacts.isLoading = false;
+        const indexElem = state.contacts.items.findIndex(
+          contact => contact.id === action.payload.id
+        );
+        state.contacts.items.splice(indexElem, 1, action.payload);
+        toast.success('The contact has been updated', messageObj);
+      })
+      .addCase(updateContactUser.rejected, (state, action) => {
         state.contacts.isLoading = false;
         state.contacts.error = action.payload;
         toast.error(`${action.payload}`, messageObj);

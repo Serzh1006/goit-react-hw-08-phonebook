@@ -6,6 +6,7 @@ import css from './contacts.module.css';
 
 const ContactsItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
+
   return (
     <li className={css.contactsItem}>
       <p className={css.nameContact}>{name}</p>
@@ -15,7 +16,7 @@ const ContactsItem = ({ id, name, number }) => {
         onClick={() => dispatch(deleteContactUser(id))}
         type="button"
       >
-        <CloseIcon boxSize={3} />
+        <CloseIcon color={'black'} boxSize={3} />
       </button>
     </li>
   );

@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { Input } from '@chakra-ui/react';
 import { Button } from '@chakra-ui/react';
+import UpdateContact from 'components/updateContact/UpdateContact';
 import { addNewContactsToDB } from 'servises/contactsApi/addContactsApi';
 import { selectContacts } from 'redux/selectors';
 import { messageObj } from '../../helpers/settings';
@@ -36,50 +37,54 @@ const PhoneBook = () => {
   };
 
   return (
-    <Formik
-      initialValues={initialsValues}
-      validationSchema={schema}
-      onSubmit={onSubmitForm}
-    >
-      <Form className={css.formPhonebook}>
-        <label className={css.label}>
-          Name
-          <Field
-            as={Input}
-            className={css.input}
-            type="text"
+    <>
+      <Formik
+        initialValues={initialsValues}
+        validationSchema={schema}
+        onSubmit={onSubmitForm}
+      >
+        <Form className={css.formPhonebook}>
+          <label className={css.label}>
+            Name
+            <Field
+              as={Input}
+              className={css.input}
+              type="text"
+              name="name"
+              autoComplete="off"
+            />
+          </label>
+
+          <ErrorMessage
+            className={css.nameErrorMessage}
+            component="div"
             name="name"
-            autoComplete="off"
           />
-        </label>
 
-        <ErrorMessage
-          className={css.nameErrorMessage}
-          component="div"
-          name="name"
-        />
-
-        <label className={css.label}>
-          Number
-          <Field
-            as={Input}
-            className={css.input}
-            type="tel"
+          <label className={css.label}>
+            Number
+            <Field
+              as={Input}
+              className={css.input}
+              type="tel"
+              name="number"
+              autoComplete="off"
+            />
+          </label>
+          <ErrorMessage
+            className={css.numberErrorMessage}
+            component="div"
             name="number"
-            autoComplete="off"
           />
-        </label>
-        <ErrorMessage
-          className={css.numberErrorMessage}
-          component="div"
-          name="number"
-        />
 
-        <Button className={css.btnSubmit} type="submit" colorScheme="blue">
-          Add Contact
-        </Button>
-      </Form>
-    </Formik>
+          <Button className={css.btnSubmit} type="submit" colorScheme="blue">
+            Add Contact
+          </Button>
+        </Form>
+      </Formik>
+
+      <UpdateContact />
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 .usermenu {
   display: flex;
   gap: 5px;
+  flex-wrap: wrap;
   align-items: center;
   min-width: 168px;
   margin-left: auto;
@@ -21,7 +22,20 @@
   border-radius: 3px;
 }
 
-.avatar {
-  width: 23%;
-  height: auto;
+@media screen and (max-width: 768px) {
+  .avatar {
+    display: none !important;
+  }
+  .welcomeText {
+    display: none;
+  }
+  .usermenu {
+    min-width: 65px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .avatar {
+    display: block !important;
+  }
 }

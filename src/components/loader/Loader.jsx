@@ -4,7 +4,6 @@ import css from './loader.module.css';
 const Loader = () => {
   return (
     <div className={css.loader}>
-      {' '}
       <ThreeDots
         height="80"
         width="80"
