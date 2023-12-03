@@ -1,7 +1,6 @@
 .container {
-  max-width: 2300px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 15px;
   padding-bottom: 60px;
 }
 
@@ -10,4 +9,22 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+
+@media screen and (min-width: 420px) {
+  .container {
+    max-width: 420px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1130px;
+  }
 }
