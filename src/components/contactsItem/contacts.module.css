@@ -1,42 +1,39 @@
-.contactsList {
-  margin-left: 15px;
-  margin-top: 20px;
-  width: 340px;
-  padding: 5px;
-  list-style: none;
-}
-
 .contactsItem {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
   font-size: 17px;
-  margin-bottom: 5px;
-  width: 100%;
-  height: 50px;
-  padding: 3px;
+  width: 200px;
+  height: 200px;
   border: 2px solid burlywood;
-  border-radius: 5px;
-  /* background-color: rgba(207, 164, 108, 0.4); */
+  border-radius: 10px;
+  background-color: rgba(207, 164, 108, 0.4);
   color: rgb(24, 24, 88);
 }
 
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
 .btnDelete {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0 8px;
   border-radius: 50%;
   color: rgb(255, 255, 255);
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .btnDelete:hover,
 .btnDelete:focus {
   cursor: pointer;
-}
-
-.numberContact {
-  margin-left: auto;
-  margin-right: 9px;
 }

@@ -1,9 +1,18 @@
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { Breadcrumb, BreadcrumbItem } from '@chakra-ui/react';
 import { selectLoggedIn } from '../../redux/selectors';
 import css from './navigation.module.css';
+
+const StyledLink = styled(NavLink)`
+  color: aliceblue;
+
+  &.active {
+    color: orange;
+  }
+`;
 
 const Navigation = () => {
   const IsLoggedIn = useSelector(selectLoggedIn);
@@ -11,16 +20,16 @@ const Navigation = () => {
   return (
     <Breadcrumb spacing="8px" separator={<ChevronRightIcon color="gray.500" />}>
       <BreadcrumbItem>
-        <Link className={css.homeLink} to="/">
+        <StyledLink className={css.homeLink} to="/">
           Home
-        </Link>
+        </StyledLink>
       </BreadcrumbItem>
 
       <BreadcrumbItem>
         {IsLoggedIn && (
-          <Link className={css.contactsLink} to="/contacts">
+          <StyledLink className={css.contactsLink} to="/contacts">
             Contacts
-          </Link>
+          </StyledLink>
         )}
       </BreadcrumbItem>
     </Breadcrumb>

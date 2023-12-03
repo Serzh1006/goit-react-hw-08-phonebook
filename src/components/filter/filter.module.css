@@ -1,15 +1,18 @@
 .filterLabel {
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: 600;
-  font-size: 20px;
-  color: rgb(7, 6, 65);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: aliceblue;
 }
 
 .filterInput {
   display: block;
   margin-top: 5px;
   width: 250px;
-  outline: none;
   border-radius: 8px;
-  background-color: rgb(209, 195, 216);
+  background-color: rgb(184, 181, 185);
+}
+
+.filterInput:focus {
+  background-color: rgb(192, 173, 173);
 }

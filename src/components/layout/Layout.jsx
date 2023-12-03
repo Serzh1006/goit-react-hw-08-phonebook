@@ -10,7 +10,13 @@ const Layout = () => {
       <AppBar />
       <main>
         <div className={css.container}>
-          <Suspense fallback={<LoaderMain />}>
+          <Suspense
+            fallback={
+              <div className={css.refreshLoader}>
+                <LoaderMain />
+              </div>
+            }
+          >
             <Outlet />
           </Suspense>
         </div>

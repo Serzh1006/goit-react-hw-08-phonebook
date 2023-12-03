@@ -60,7 +60,7 @@ const Login = () => {
             name="password"
           />
           <Button className={css.btnLogin} type="submit" colorScheme="teal">
-            Log in
+            Sign in
           </Button>
         </Form>
       </Formik>

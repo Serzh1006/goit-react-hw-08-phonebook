@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
+import { Alert, AlertIcon } from '@chakra-ui/react';
 import storage from 'redux-persist/lib/storage';
 import { userSignUp } from 'servises/userAuth/userSignUpApi';
 import { userLogin } from 'servises/userAuth/userLoginApi';
 import { userLogOut } from 'servises/userAuth/userLogOutApi';
 import { userRefresh } from 'servises/userAuth/userRefreshApi';
-import { messageObj } from '../helpers/settings';
+// import { messageObj } from '../helpers/settings';
 
 const stateUsers = {
   user: { name: '', email: '' },
@@ -35,7 +36,7 @@ const userSlice = createSlice({
       .addCase(userSignUp.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-        toast.error(`${action.payload}`, messageObj);
+        // toast.error(`${action.payload}`, messageObj);
       })
       .addCase(userLogin.pending, state => {
         state.loading = true;
@@ -50,7 +51,11 @@ const userSlice = createSlice({
       .addCase(userLogin.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-        toast.error(`${action.payload}`, messageObj);
+        <Alert status="error">
+          <AlertIcon />
+          (${action.payload})
+        </Alert>;
+        // toast.error(`${action.payload}`, messageObj);
       })
       .addCase(userLogOut.pending, state => {
         state.loading = true;
@@ -65,7 +70,7 @@ const userSlice = createSlice({
       .addCase(userLogOut.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-        toast.error(`${action.payload}`, messageObj);
+        // toast.error(`${action.payload}`, messageObj);
       })
       .addCase(userRefresh.pending, state => {
         state.isRefresh = true;
@@ -82,7 +87,7 @@ const userSlice = createSlice({
         state.isRefresh = false;
         state.loading = false;
         state.error = action.payload;
-        toast.error(`${action.payload}`, messageObj);
+        // toast.error(`${action.payload}`, messageObj);
       });
   },
 });

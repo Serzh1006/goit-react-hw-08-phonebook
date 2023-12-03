@@ -75,7 +75,7 @@ const Register = () => {
           />
 
           <Button className={css.btnRegister} type="submit" colorScheme="teal">
-            Sign Up
+            Sign up
           </Button>
         </Form>
       </Formik>

@@ -7,7 +7,7 @@ import { userLogOut } from '../../servises/userAuth/userLogOutApi';
 import css from './usermenu.module.css';
 
 const UserMenu = () => {
-  const { email } = useSelector(selectUser);
+  const { name } = useSelector(selectUser);
   const dispatch = useDispatch();
 
   return (
@@ -15,14 +15,14 @@ const UserMenu = () => {
       <Avatar className={css.avatar}>
         <AvatarBadge boxSize="18px" bg="green.500" />
       </Avatar>
-      <p className={css.welcomeText}>Welcome,{email}</p>
+      <p className={css.welcomeText}>Welcome,{name}</p>
 
       <Button
         className={css.logoutbtn}
         onClick={() => dispatch(userLogOut())}
         type="button"
         rightIcon={<ArrowForwardIcon />}
-        colorScheme="teal"
+        colorScheme="pink"
         variant="outline"
         size="sm"
       >

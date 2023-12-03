@@ -1,8 +1,28 @@
+.titleWrap {
+  position: relative;
+  height: 50vh;
+}
+
 .title {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 30px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  margin-top: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  animation-name: primaryTitle;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes primaryTitle {
+  0% {
+    color: rgb(255, 255, 255);
+  }
+  100% {
+    color: transparent;
+  }
 }

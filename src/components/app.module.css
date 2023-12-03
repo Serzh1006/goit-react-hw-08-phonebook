@@ -1,13 +1,24 @@
 .phoneBook {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 23px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 400;
   margin-bottom: 20px;
-  color: rgb(0, 110, 255);
+  color: aliceblue;
 }
 
 .contacts {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 23px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
   margin-bottom: 20px;
-  color: rgb(0, 110, 255);
+  text-align: center;
+  color: aliceblue;
+}
+
+.refreshLoader {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }

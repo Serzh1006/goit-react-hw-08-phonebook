@@ -4,3 +4,10 @@
   padding: 30px;
   padding-bottom: 60px;
 }
+
+.refreshLoader {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}

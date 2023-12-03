@@ -1,17 +1,15 @@
-import { Vortex } from 'react-loader-spinner';
+import { Spinner } from '@chakra-ui/react';
 import css from './loaderMain.module.css';
 
 const LoaderMain = () => {
   return (
     <div className={css.loaderMain}>
-      <Vortex
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="vortex-loading"
-        wrapperStyle={{}}
-        wrapperClass="vortex-wrapper"
-        colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
+      <Spinner
+        thickness="4px"
+        speed="0.65s"
+        emptyColor="gray.200"
+        color="blue.500"
+        size="xl"
       />
     </div>
   );

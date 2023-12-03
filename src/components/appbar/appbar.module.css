@@ -7,4 +7,5 @@
   padding-right: 30px;
   height: 60px;
   box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.37);
+  background: linear-gradient(0, rgb(27, 82, 105), rgb(133, 66, 199));
 }

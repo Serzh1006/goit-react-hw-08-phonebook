@@ -1,55 +1,51 @@
 .formPhonebook {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   width: 325px;
-  padding: 6px;
+  padding: 10px 15px 15px 15px;
   height: 223px;
   margin-bottom: 30px;
-  border: 1px solid rgb(194, 190, 190);
-  border-radius: 5px;
-}
-
-.label {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  margin-left: 30px;
-  margin-top: 5px;
-  color: rgb(59, 28, 38);
+  border: 1px solid rgba(255, 255, 255, 0.486);
+  border-radius: 8px;
 }
 
 .input {
-  margin: 0 auto;
   display: block;
-  font-size: 15px;
-  margin-bottom: 10px;
-  outline: none;
-  border-radius: 4px;
-  width: 80%;
-  color: black;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.input:focus {
+  background-color: rgb(192, 173, 173);
 }
 
 .btnSubmit {
-  position: absolute;
-  left: 50%;
-  bottom: 8px;
-  transform: translateX(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .nameErrorMessage {
   position: absolute;
-  top: 71px;
-  right: 80px;
-  font-size: 15px;
+  top: 53px;
+  left: 10%;
+  font-size: 13px;
   pointer-events: none;
   text-align: center;
-  color: red;
+  color: rgb(185, 10, 10);
 }
 
 .numberErrorMessage {
   position: absolute;
-  top: 146px;
-  right: 65px;
+  top: 122px;
+  left: 10%;
   pointer-events: none;
-  font-size: 15px;
+  font-size: 13px;
   text-align: center;
-  color: red;
+  color: rgb(185, 10, 10);
 }

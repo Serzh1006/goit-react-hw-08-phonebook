@@ -1,21 +1,28 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 import { Breadcrumb, BreadcrumbItem } from '@chakra-ui/react';
 import css from './authNav.module.css';
+
+const StyledLink = styled(NavLink)`
+  &.active {
+    color: orange;
+  }
+`;
 
 const AuthNav = () => {
   return (
     <div className={css.authNav}>
       <Breadcrumb fontWeight="small" fontSize="m">
         <BreadcrumbItem>
-          <Link className={css.login} to="/login">
+          <StyledLink className={css.login} to="/login">
             Login
-          </Link>
+          </StyledLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <Link className={css.register} to="/register">
+          <StyledLink className={css.register} to="/register">
             Register
-          </Link>
+          </StyledLink>
         </BreadcrumbItem>
       </Breadcrumb>
     </div>

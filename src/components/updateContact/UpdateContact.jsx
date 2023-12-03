@@ -45,16 +45,14 @@ const UpdateContact = () => {
       onSubmit={onUpdateForm}
     >
       <Form className={css.formPhonebook}>
-        <label className={css.label}>
-          Name
-          <Field
-            as={Input}
-            className={css.input}
-            type="text"
-            name="name"
-            autoComplete="off"
-          />
-        </label>
+        <Field
+          as={Input}
+          className={css.input}
+          type="text"
+          name="name"
+          autoComplete="off"
+          placeholder="Name"
+        />
 
         <ErrorMessage
           className={css.nameErrorMessage}
@@ -62,16 +60,15 @@ const UpdateContact = () => {
           name="name"
         />
 
-        <label className={css.label}>
-          Number
-          <Field
-            as={Input}
-            className={css.input}
-            type="tel"
-            name="number"
-            autoComplete="off"
-          />
-        </label>
+        <Field
+          as={Input}
+          className={css.input}
+          type="tel"
+          name="number"
+          autoComplete="off"
+          placeholder="Number"
+        />
+
         <ErrorMessage
           className={css.numberErrorMessage}
           component="div"
