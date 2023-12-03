@@ -15,13 +15,13 @@ const AuthNav = () => {
       <Breadcrumb fontWeight="small" fontSize="m">
         <BreadcrumbItem>
           <StyledLink className={css.login} to="/login">
-            Login
+            Sign in
           </StyledLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
           <StyledLink className={css.register} to="/register">
-            Register
+            Sign up
           </StyledLink>
         </BreadcrumbItem>
       </Breadcrumb>
