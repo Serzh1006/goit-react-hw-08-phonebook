@@ -1,3 +1,7 @@
+body {
+  background-color: rgba(92, 61, 121, 0.5);
+}
+
 .titleContainer {
   padding: 0 20px;
   margin: 0 auto;
@@ -5,33 +9,31 @@
 
 .titleSection {
   position: relative;
-  height: 90vh;
+  height: 550px;
   width: 100vw;
   margin: 0 auto;
-  background-color: rgba(92, 61, 121, 0.5);
+  background-color: gray;
+  background-image: url('../../images/640.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .title {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  bottom: 0;
+  right: 0;
+  text-align: center;
   transform: translate(-50%, -50%);
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 36px;
-  animation-name: primaryTitle;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  color: aliceblue;
 }
 
-@keyframes primaryTitle {
-  0% {
-    color: rgb(255, 255, 255);
-  }
-  100% {
-    color: transparent;
+@media screen and (min-width: 641px) {
+  .titleSection {
+    background-image: url('../../images/1280.jpg');
   }
 }
 
