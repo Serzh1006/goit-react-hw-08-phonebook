@@ -1,6 +1,14 @@
-.titleWrap {
+.titleContainer {
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.titleSection {
   position: relative;
-  height: 50vh;
+  height: 90vh;
+  width: 100vw;
+  margin: 0 auto;
+  background-color: rgba(92, 61, 121, 0.5);
 }
 
 .title {
@@ -24,5 +32,11 @@
   }
   100% {
     color: transparent;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .titleSection {
+    width: 1158px;
   }
 }

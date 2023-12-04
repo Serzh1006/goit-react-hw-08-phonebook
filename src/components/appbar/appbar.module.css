@@ -1,11 +1,18 @@
 .header {
   display: flex;
   align-items: center;
-  max-width: 100%;
-  padding: 5px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 0 20px;
+  width: 100vw;
   height: 60px;
+  margin: 0 auto;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.37);
   background: linear-gradient(0, rgb(27, 82, 105), rgb(133, 66, 199));
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    max-width: 1158px;
+  }
 }
