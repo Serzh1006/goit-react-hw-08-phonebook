@@ -1,5 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import { ToastContainer } from 'react-toastify';
 import { Input } from '@chakra-ui/react';
 import { Button } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
@@ -64,6 +65,18 @@ const Login = () => {
           </Button>
         </Form>
       </Formik>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 };
