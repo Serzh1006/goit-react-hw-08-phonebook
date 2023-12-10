@@ -5,7 +5,8 @@ import { ToastContainer } from 'react-toastify';
 import Contacts from '../../components/contacts';
 import Filter from '../../components/filter';
 import Loader from '../../components/loader';
-import PhoneBook from '../../components/phonebook';
+import ModalAddContact from 'components/modalAddContact/ModalAddContact';
+import ModalUpdateContact from 'components/modalUpdateContact/ModalUpdateContact';
 import { selectContacts, selectLoading, selectLoggedIn } from 'redux/selectors';
 import { fetchContacts } from '../../servises/contactsApi/fetchContactsApi';
 import css from '../../components/app.module.css';
@@ -18,17 +19,20 @@ const ContactsPage = () => {
 
   useEffect(() => {
     if (!isLoggedin) return <Navigate to={'/login'} />;
+
     dispatch(fetchContacts());
   }, [dispatch, isLoggedin]);
 
   return (
     <div className={css.contactsPage}>
       <h2 className={css.phoneBook}>Phonebook</h2>
-      <PhoneBook />
+      <ModalAddContact />
+      <ModalUpdateContact />
       <h2 className={css.contacts}>Contacts</h2>
       <Filter />
       {isLoading && <Loader />}
       {contactsFromState.length !== 0 && <Contacts />}
+
       <ToastContainer
         position="top-center"
         autoClose={5000}

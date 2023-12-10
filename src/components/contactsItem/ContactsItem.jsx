@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { DeleteIcon } from '@chakra-ui/icons';
 import { deleteContactUser } from '../../servises/contactsApi/deleteContactApi';
+import ModalUpdateContact from 'components/modalUpdateContact/ModalUpdateContact';
 import css from './contacts.module.css';
 
 const ContactsItem = ({ id, name, number }) => {
@@ -21,6 +22,7 @@ const ContactsItem = ({ id, name, number }) => {
       >
         <DeleteIcon color={'red'} boxSize={7} />
       </button>
+      <ModalUpdateContact name={name} number={number} />
     </li>
   );
 };

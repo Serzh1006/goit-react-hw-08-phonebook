@@ -4,17 +4,20 @@
   flex-direction: column;
   gap: 30px;
   width: 325px;
-  padding: 10px 15px 15px 15px;
   height: 223px;
+  padding: 10px 15px 15px 15px;
   margin-bottom: 30px;
+  margin: 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.486);
   border-radius: 8px;
+  background-color: rgba(112, 112, 112, 0.459);
 }
 
 .input {
   display: block;
   width: 90%;
   margin: 0 auto;
+  background-color: white;
 }
 
 .input:focus {

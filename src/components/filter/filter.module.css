@@ -2,7 +2,7 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  color: aliceblue;
+  color: rgb(0, 0, 0);
 }
 
 .filterInput {
@@ -10,7 +10,7 @@
   margin-top: 5px;
   width: 250px;
   border-radius: 8px;
-  background-color: rgb(184, 181, 185);
+  background-color: white;
 }
 
 .filterInput:focus {

@@ -4,7 +4,6 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { Input } from '@chakra-ui/react';
 import { Button } from '@chakra-ui/react';
-import UpdateContact from 'components/updateContact/UpdateContact';
 import { addNewContactsToDB } from 'servises/contactsApi/addContactsApi';
 import { selectContacts } from 'redux/selectors';
 import { messageObj } from '../../helpers/settings';
@@ -79,8 +78,6 @@ const PhoneBook = () => {
           </Button>
         </Form>
       </Formik>
-
-      <UpdateContact />
     </>
   );
 };
