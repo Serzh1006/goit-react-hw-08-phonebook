@@ -31,6 +31,7 @@ const userSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        toast.success('Welcome to PhoneBook!', messageObj);
       })
       .addCase(userSignUp.rejected, (state, action) => {
         state.loading = false;
@@ -46,6 +47,7 @@ const userSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        toast.success('Welcome to PhoneBook!', messageObj);
       })
       .addCase(userLogin.rejected, (state, action) => {
         state.loading = false;
@@ -61,6 +63,7 @@ const userSlice = createSlice({
         state.user = action.payload;
         state.token = null;
         state.isLoggedIn = false;
+        toast.success('See you soon!', messageObj);
       })
       .addCase(userLogOut.rejected, (state, action) => {
         state.loading = false;
