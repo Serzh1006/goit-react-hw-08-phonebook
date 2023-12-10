@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { useRef } from 'react';
 import PhoneBook from 'components/phonebook/Phonebook';
+import css from './modalAddContact.module.css';
 
 const ModalAddContact = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -19,7 +20,9 @@ const ModalAddContact = () => {
 
   return (
     <>
-      <Button onClick={onOpen}>Create a new contact</Button>
+      <div className={css.btnCreateContact}>
+        <Button onClick={onOpen}>Create a new contact</Button>
+      </div>
 
       <Modal
         initialFocusRef={initialRef}

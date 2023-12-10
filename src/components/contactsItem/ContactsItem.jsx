@@ -14,15 +14,16 @@ const ContactsItem = ({ id, name, number }) => {
         <p className={css.nameContact}>{name}</p>
         <p className={css.numberContact}>{number}</p>
       </div>
-
-      <button
-        className={css.btnDelete}
-        onClick={() => dispatch(deleteContactUser(id))}
-        type="button"
-      >
-        <DeleteIcon color={'red'} boxSize={7} />
-      </button>
-      <ModalUpdateContact name={name} number={number} />
+      <div className={css.buttonsDelUp}>
+        <ModalUpdateContact nameValue={name} numberValue={number} />
+        <button
+          className={css.btnDelete}
+          onClick={() => dispatch(deleteContactUser(id))}
+          type="button"
+        >
+          <DeleteIcon color={'red'} boxSize={6} />
+        </button>
+      </div>
     </li>
   );
 };

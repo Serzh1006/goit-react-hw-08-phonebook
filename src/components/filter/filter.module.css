@@ -1,18 +1,21 @@
+.sectionFilter {
+  max-width: 1158px;
+  margin: 0 auto;
+}
+
 .filterLabel {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 18px;
+  margin-left: 20px;
   color: rgb(0, 0, 0);
 }
 
 .filterInput {
   display: block;
   margin-top: 5px;
+  margin-left: 20px;
   width: 250px;
   border-radius: 8px;
   background-color: white;
-}
-
-.filterInput:focus {
-  background-color: rgb(192, 173, 173);
 }

@@ -7,18 +7,20 @@ const Contacts = () => {
   const contactsFilters = useSelector(visibleContacts);
 
   return (
-    <ul className={css.contactsList}>
-      {contactsFilters.map(contact => {
-        return (
-          <ContactsItem
-            key={contact.id}
-            id={contact.id}
-            name={contact.name}
-            number={contact.number}
-          />
-        );
-      })}
-    </ul>
+    <section className={css.sectionList}>
+      <ul className={css.contactsList}>
+        {contactsFilters.map(contact => {
+          return (
+            <ContactsItem
+              key={contact.id}
+              id={contact.id}
+              name={contact.name}
+              number={contact.number}
+            />
+          );
+        })}
+      </ul>
+    </section>
   );
 };
 

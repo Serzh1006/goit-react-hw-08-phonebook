@@ -9,13 +9,13 @@ import { updateContactUser } from '../../servises/contactsApi/updateContactsApi'
 import { messageObj } from '../../helpers/settings';
 import css from './update.module.css';
 
-const UpdateContact = () => {
+const UpdateContact = ({ nameValue, numberValue, closeBtn }) => {
   const dispatch = useDispatch();
   const dataContacts = useSelector(selectContacts);
 
-  const initialsValues = {
-    name: '',
-    number: '',
+  let initialsValues = {
+    name: nameValue,
+    number: numberValue,
   };
 
   const schema = yup.object().shape({
@@ -31,11 +31,11 @@ const UpdateContact = () => {
         contact: values,
       };
       dispatch(updateContactUser(data));
-      resetForm();
+      values.name = '';
+      values.number = '';
       return;
     } else {
       toast.error('Contact not found', messageObj);
-      resetForm();
     }
   };
   return (
@@ -75,7 +75,12 @@ const UpdateContact = () => {
           name="number"
         />
 
-        <Button className={css.btnSubmit} type="submit" colorScheme="green">
+        <Button
+          className={css.btnSubmit}
+          type="submit"
+          colorScheme="green"
+          onClick={closeBtn}
+        >
           Update Contact
         </Button>
       </Form>

@@ -6,7 +6,6 @@ import Contacts from '../../components/contacts';
 import Filter from '../../components/filter';
 import Loader from '../../components/loader';
 import ModalAddContact from 'components/modalAddContact/ModalAddContact';
-import ModalUpdateContact from 'components/modalUpdateContact/ModalUpdateContact';
 import { selectContacts, selectLoading, selectLoggedIn } from 'redux/selectors';
 import { fetchContacts } from '../../servises/contactsApi/fetchContactsApi';
 import css from '../../components/app.module.css';
@@ -27,7 +26,6 @@ const ContactsPage = () => {
     <div className={css.contactsPage}>
       <h2 className={css.phoneBook}>Phonebook</h2>
       <ModalAddContact />
-      <ModalUpdateContact />
       <h2 className={css.contacts}>Contacts</h2>
       <Filter />
       {isLoading && <Loader />}

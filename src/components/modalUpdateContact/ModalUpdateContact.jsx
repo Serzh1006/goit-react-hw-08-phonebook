@@ -8,10 +8,11 @@ import {
   useDisclosure,
   Button,
 } from '@chakra-ui/react';
+import { RepeatIcon } from '@chakra-ui/icons';
 import { useRef } from 'react';
 import UpdateContact from 'components/updateContact/UpdateContact';
 
-const ModalUpdateContact = ({ name, number }) => {
+const ModalUpdateContact = ({ nameValue, numberValue }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const initialRef = useRef(null);
@@ -19,7 +20,9 @@ const ModalUpdateContact = ({ name, number }) => {
 
   return (
     <>
-      <Button onClick={onOpen}>Update contact</Button>
+      <Button onClick={onOpen}>
+        <RepeatIcon color={'blue'} boxSize={6} />
+      </Button>
 
       <Modal
         initialFocusRef={initialRef}
@@ -32,7 +35,11 @@ const ModalUpdateContact = ({ name, number }) => {
           <ModalHeader>Update your contact</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            <UpdateContact />
+            <UpdateContact
+              nameValue={nameValue}
+              numberValue={numberValue}
+              closeBtn={onClose}
+            />
           </ModalBody>
         </ModalContent>
       </Modal>
