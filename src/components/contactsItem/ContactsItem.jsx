@@ -15,7 +15,7 @@ const ContactsItem = ({ id, name, number }) => {
         <p className={css.numberContact}>{number}</p>
       </div>
       <div className={css.buttonsDelUp}>
-        <ModalUpdateContact nameValue={name} numberValue={number} />
+        <ModalUpdateContact id={id} nameValue={name} numberValue={number} />
         <button
           className={css.btnDelete}
           onClick={() => dispatch(deleteContactUser(id))}

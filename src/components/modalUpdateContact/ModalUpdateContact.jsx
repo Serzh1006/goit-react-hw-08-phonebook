@@ -12,7 +12,7 @@ import { RepeatIcon } from '@chakra-ui/icons';
 import { useRef } from 'react';
 import UpdateContact from 'components/updateContact/UpdateContact';
 
-const ModalUpdateContact = ({ nameValue, numberValue }) => {
+const ModalUpdateContact = ({ id, nameValue, numberValue }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const initialRef = useRef(null);
@@ -36,6 +36,7 @@ const ModalUpdateContact = ({ nameValue, numberValue }) => {
           <ModalCloseButton />
           <ModalBody pb={6}>
             <UpdateContact
+              id={id}
               nameValue={nameValue}
               numberValue={numberValue}
               closeBtn={onClose}

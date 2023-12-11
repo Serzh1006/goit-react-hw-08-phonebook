@@ -9,7 +9,7 @@ import { updateContactUser } from '../../servises/contactsApi/updateContactsApi'
 import { messageObj } from '../../helpers/settings';
 import css from './update.module.css';
 
-const UpdateContact = ({ nameValue, numberValue, closeBtn }) => {
+const UpdateContact = ({ id, nameValue, numberValue, closeBtn }) => {
   const dispatch = useDispatch();
   const dataContacts = useSelector(selectContacts);
 
@@ -23,8 +23,8 @@ const UpdateContact = ({ nameValue, numberValue, closeBtn }) => {
     number: yup.string().min(9).max(13).required(),
   });
 
-  const onUpdateForm = (values, { resetForm }) => {
-    const findObj = dataContacts.find(contact => contact.name === values.name);
+  const onUpdateForm = values => {
+    const findObj = dataContacts.find(contact => contact.id === id);
     if (findObj !== undefined) {
       const data = {
         id: findObj.id,
